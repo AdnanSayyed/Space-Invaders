@@ -2,14 +2,15 @@
 
 class Player {
 private:
-	sf::Texture playerTexture;
-	sf::Sprite playerSprite;
 	int player_score = 0;
 	int health = 3;
-	int movement_speed=10;
-	sf::Vector2f position = sf::Vector2f(200,200);
+	int movement_speed = 10;
+	sf::Vector2f position = sf::Vector2f(200, 200);
 
 public:
+	sf::Texture playerTexture;
+	sf::Sprite playerSprite;
+
 	void takeDamage(int amt) {
 
 	}
@@ -20,6 +21,9 @@ public:
 
 	void move() {
 
+	}
+	sf::Vector2f getPosition() {
+		return position;
 	}
 };
 
@@ -38,49 +42,23 @@ int main() {
 				window->close();
 		}
 
-		window->clear(sf::Color::Yellow);
+		window->clear(sf::Color::Blue);
 
+		Player player;
+		player.playerTexture.loadFromFile("assets/textures/player_ship.png");
+		player.playerSprite.setTexture(player.playerTexture);
 
-		//circle
-		sf::CircleShape circle(50); 
-		circle.setFillColor(sf::Color::Green);
-		circle.setPosition(300	, 100);
-		window->draw(circle);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+			player.move();
+		}
 
-		//square
-		sf::RectangleShape square(sf::Vector2f(100, 100));
-		square.setFillColor(sf::Color::Red);
-		square.setPosition(100, 100);
-		window->draw(square);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+			player.move();
+		}
 
+		player.playerSprite.setPosition(player.getPosition());
+		window->draw(player.playerSprite);
 
-		//triangle
-		sf::ConvexShape triangle;
-		triangle.setPointCount(3);
-		triangle.setPoint(0,sf::Vector2f(0, 100));
-		triangle.setPoint(1, sf::Vector2f(50, 0));
-		triangle.setPoint(2, sf::Vector2f(100, 100));
-		triangle.setFillColor(sf::Color::Blue);
-		triangle.setPosition(500, 100);
-		window->draw(triangle);
-
-
-		//image
-		sf::Texture outscal_texture;
-		outscal_texture.loadFromFile("assets/textures/outscal_logo.png");
-		sf::Sprite outscal_sprite;
-		outscal_sprite.setTexture(outscal_texture);
-		outscal_sprite.setPosition(300, 300);
-		outscal_sprite.setRotation(45);
-		outscal_sprite.setScale(0.5, 0.5);
-		window->draw(outscal_sprite);
-
-		//text
-		sf::Font font;
-		font.loadFromFile("assets/fonts/OpenSans.ttf");
-		sf::Text text("SFML is Awesome", font, 50);
-		text.setFillColor(sf::Color::Red);
-		window->draw(text);
 
 
 		window->display();
