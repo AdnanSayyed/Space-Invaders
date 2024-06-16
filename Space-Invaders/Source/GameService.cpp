@@ -1,4 +1,4 @@
-#include "/Adnan/SFML PROJECTS/Space-Invaders/Space-Invaders/Header/GameService.h";
+#include "../Header/GameService.h";
 
 void GameService::initialize() {
 	//initialize things
@@ -37,7 +37,10 @@ void GameService::ignite() {
 void GameService::update() {
 	//update game logic and state
 
+	service_locator->getEventService()->processEvents();
+
 	service_locator->update();
+
 }
 
 
