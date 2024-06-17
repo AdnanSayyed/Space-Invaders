@@ -23,4 +23,8 @@ public :
 	bool pressedEscKey();
 	bool isKeyboardEvent();
 
+	bool pressedLeftKey();
+	bool pressedRightKey();
+
+
 };
