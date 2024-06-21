@@ -33,7 +33,9 @@ public:
     void update();
     void render();
 
-    void move(float offsetX);
+    void moveLeft();
+    void moveRight();
+
     int getMoveSpeed();
     sf::Vector2f getPosition();
 

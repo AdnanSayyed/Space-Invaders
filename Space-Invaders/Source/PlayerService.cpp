@@ -13,10 +13,10 @@ void PlayerService::processPlayerInput()
 {
 	// Handle keyboard input
 	if (event_service->pressedLeftKey()) {
-		move(-1.0f * getMoveSpeed());
+		moveLeft();
 	}
 	if (event_service->pressedRightKey()) {
-		move(1.0f * getMoveSpeed());
+		moveRight();
 	}
 }
 
@@ -46,10 +46,17 @@ void PlayerService::render()
 	game_window->draw(player_sprite);
 }
 
-void PlayerService::move(float offsetX)
+void PlayerService::moveLeft()
 {
-	position.x += offsetX;
+
+	position.x -= movement_speed * ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
 }
+
+void PlayerService::moveRight()
+{
+	position.x += movement_speed * ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
+}
+
 
 int PlayerService::getMoveSpeed()
 {
