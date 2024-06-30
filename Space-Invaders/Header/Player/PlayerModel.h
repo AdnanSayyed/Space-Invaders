@@ -16,6 +16,7 @@ private:
     sf::Vector2f player_position; 
     PlayerState player_state; 
     int player_score;
+    bool player_alive;
 
 public:
 
