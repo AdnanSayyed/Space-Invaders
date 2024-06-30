@@ -1,5 +1,6 @@
 #include "../../Header/Time/TimeService.h"
 
+
 namespace Time
 {
 	void TimeService::initialize()
@@ -36,4 +37,3 @@ namespace Time
 	{
 		previous_time = std::chrono::steady_clock::now();
 	}
-}

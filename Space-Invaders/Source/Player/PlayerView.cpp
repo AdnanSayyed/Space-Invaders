@@ -6,6 +6,7 @@
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Graphic/GraphicService.h"
 
+
 namespace Player {
 	using namespace Global;
 
@@ -48,4 +49,5 @@ namespace Player {
 	{
 		game_window->draw(player_sprite);
 	}
+
 }

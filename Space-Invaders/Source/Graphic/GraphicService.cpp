@@ -61,5 +61,4 @@ namespace Graphic {
 	{
 		return window_color;
 	}
-
 }

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 
+
 namespace Player {
 
 	class PlayerController;
@@ -24,3 +25,4 @@ namespace Player {
 	};
 
 }
+

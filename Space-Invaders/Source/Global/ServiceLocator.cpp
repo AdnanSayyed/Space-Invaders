@@ -96,6 +96,4 @@ namespace Global
 		return time_service;
 	}
 
-
-
 }

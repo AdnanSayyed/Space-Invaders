@@ -1,8 +1,6 @@
-<<<<<<< Updated upstream
-=======
-#include <SFML/Graphics.hpp>
-#include "Header/Main/GameService.h";
+
 using namespace Main;
+
 //class Player {
 //private:
 //	int player_score = 0;
@@ -34,9 +32,52 @@ using namespace Main;
 //		return movement_speed;
 //	}
 //};
->>>>>>> Stashed changes
 
-int main()
-{
-    return 0;
+int main() {
+
+
+	/*sf::VideoMode videoMode = *(new sf::VideoMode(800, 600));
+
+	sf::RenderWindow* window = new sf::RenderWindow(videoMode, "My SFML Window");
+
+	Player player;
+	player.playerTexture.loadFromFile("assets/textures/player_ship.png");
+	player.playerSprite.setTexture(player.playerTexture);
+
+	while (window->isOpen()) {
+		sf::Event event;
+		while (window->pollEvent(event)) {
+			if (event.type == sf::Event::Closed)
+				window->close();
+		}
+
+		window->clear(sf::Color::Blue);
+
+		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+			player.move(-1*player.getMoveSpeed());
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+			player.move(1*player.getMoveSpeed());
+		}
+
+		player.playerSprite.setPosition(player.getPosition());
+		window->draw(player.playerSprite);
+
+
+
+		window->display();
+	}*/
+
+	GameService* gameService = new GameService();
+	gameService->ignite();
+	while (gameService->isRunning())	{
+
+		gameService->update();
+		gameService->render();
+	}
+
+
+	return 0;
 }
