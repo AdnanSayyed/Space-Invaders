@@ -1,9 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../Header/EventService.h"
 
-#include "../Header/Player/PlayerController.h";
+class PlayerController;
+class EventService;
 
 class PlayerService {
 

@@ -1,8 +1,9 @@
 #pragma once
-#include"../Header/GraphicService.h"
-#include"../Header/EventService.h"	
-#include "../Header/PlayerService.h"
-#include "../Header/TimeService.h"	
+#include "../../Header/Time/TimeService.h"
+
+class GraphicsService;
+class EventService;
+class PlayerService;
 
 class ServiceLocator {
 

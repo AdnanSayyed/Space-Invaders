@@ -1,4 +1,7 @@
-#include "../Header/ServiceLocator.h"
+#include "../../Header/Global/ServiceLocator.h"
+#include"../../Header/Graphic/GraphicService.h"
+#include"../../Header/Event/EventService.h"	
+#include "../../Header/Player/PlayerService.h"
 
 ServiceLocator::ServiceLocator() {
 

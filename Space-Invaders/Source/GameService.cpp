@@ -1,4 +1,8 @@
 #include "../Header/GameService.h";
+#include "../Header/Global/ServiceLocator.h";
+#include "../../Header/Graphic/GraphicService.h"
+#include "../../Header/Event/EventService.h"
+
 
 void GameService::initialize() {
 	//initialize things

@@ -1,6 +1,8 @@
 #include "../../Header/Player/PlayerController.h"
-#include "../../Header/EventService.h"
-#include "../../Header/ServiceLocator.h"
+#include "../../Header/Event/EventService.h"
+#include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Player/PlayerModel.h"
+#include "../../Header/Player/PlayerView.h"
 #include<algorithm>
 
 void PlayerController::processInput()
@@ -49,7 +51,7 @@ PlayerController::~PlayerController()
 void PlayerController::initialize()
 {
 	player_model->initialize();
-	player_view->initialize();
+	player_view->initialize(this);
 }
 
 void PlayerController::update()
