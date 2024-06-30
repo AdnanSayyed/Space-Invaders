@@ -1,5 +1,6 @@
-#include <SFML/Graphics.hpp>
-#include "Header/GameService.h";
+
+using namespace Main;
+
 //class Player {
 //private:
 //	int player_score = 0;

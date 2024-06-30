@@ -1,44 +1,47 @@
 #include "../../Header/Player/PlayerModel.h";
 
-PlayerModel::PlayerModel() { }
+namespace Player {
 
-PlayerModel::~PlayerModel() { }
+	PlayerModel::PlayerModel() { }
 
-void PlayerModel::initialize() { reset(); }
+	PlayerModel::~PlayerModel() { }
 
-void PlayerModel::reset()
-{
-	player_state = PlayerState::ALIVE;
-	player_position = initial_player_position;
-	player_score = 0;
-}
+	void PlayerModel::initialize() { reset(); }
 
-int PlayerModel::getPlayerScore()
-{
-	return player_score;
-}
+	void PlayerModel::reset()
+	{
+		player_state = PlayerState::ALIVE;
+		player_position = initial_player_position;
+		player_score = 0;
+	}
 
-void PlayerModel::setPlayerScore(int value)
-{
-	player_score = value;
-}
+	int PlayerModel::getPlayerScore()
+	{
+		return player_score;
+	}
 
-sf::Vector2f PlayerModel::getPlayerPosition()
-{
-	return player_position;
-}
+	void PlayerModel::setPlayerScore(int value)
+	{
+		player_score = value;
+	}
 
-void PlayerModel::setPlayerPosition(sf::Vector2f position)
-{
-	player_position = position;
-}
+	sf::Vector2f PlayerModel::getPlayerPosition()
+	{
+		return player_position;
+	}
 
-bool PlayerModel::getPlayerAlive()
-{
-	return player_alive;
-}
+	void PlayerModel::setPlayerPosition(sf::Vector2f position)
+	{
+		player_position = position;
+	}
 
-void PlayerModel::setPlayerAlive(bool alive)
-{
-	player_alive = alive;
+	bool PlayerModel::getPlayerAlive()
+	{
+		return player_alive;
+	}
+
+	void PlayerModel::setPlayerAlive(bool alive)
+	{
+		player_alive = alive;
+	}
 }

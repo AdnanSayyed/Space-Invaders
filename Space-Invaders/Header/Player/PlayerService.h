@@ -2,21 +2,27 @@
 
 #include <SFML/Graphics.hpp>
 
-class PlayerController;
-class EventService;
-
-class PlayerService {
-
-private :
-
-    PlayerController* player_controller;
 
 
-public:
-    PlayerService();
-    ~PlayerService();
+namespace Player {
 
-    void initialize();
-    void update();
-    void render();
-};
+	class PlayerController;
+
+	class PlayerService {
+			
+	private:
+
+		PlayerController* player_controller;
+
+
+	public:
+		PlayerService();
+		~PlayerService();
+
+		void initialize();
+		void update();
+		void render();
+	};
+
+}
+

@@ -1,36 +1,39 @@
 #include "../../Header/Time/TimeService.h"
 
-void TimeService::initialize()
-{
-	previous_time = std::chrono::steady_clock::now();
-	delta_time = 0;
-}
 
-void TimeService::update()
+namespace Time
 {
-	updateDeltaTime();
-}
+	void TimeService::initialize()
+	{
+		previous_time = std::chrono::steady_clock::now();
+		delta_time = 0;
+	}
 
-float TimeService::getDeltaTime()
-{
-	return delta_time;
-}
+	void TimeService::update()
+	{
+		updateDeltaTime();
+	}
 
-void TimeService::updateDeltaTime()
-{
-	delta_time = calculateDeltaTime();
-	updatePreviousTime();
-}
+	float TimeService::getDeltaTime()
+	{
+		return delta_time;
+	}
 
-float TimeService::calculateDeltaTime()
-{
-	int delta = std::chrono::duration_cast<std::chrono::microseconds>(
-		std::chrono::steady_clock::now() - previous_time).count();
+	void TimeService::updateDeltaTime()
+	{
+		delta_time = calculateDeltaTime();
+		updatePreviousTime();
+	}
 
-	return static_cast<float>(delta) / static_cast<float>(1000000);
-}
+	float TimeService::calculateDeltaTime()
+	{
+		int delta = std::chrono::duration_cast<std::chrono::microseconds>(
+			std::chrono::steady_clock::now() - previous_time).count();
 
-void TimeService::updatePreviousTime()
-{
-	previous_time = std::chrono::steady_clock::now();
-}
+		return static_cast<float>(delta) / static_cast<float>(1000000);
+	}
+
+	void TimeService::updatePreviousTime()
+	{
+		previous_time = std::chrono::steady_clock::now();
+	}
