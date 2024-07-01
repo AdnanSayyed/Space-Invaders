@@ -37,3 +37,4 @@ namespace Time
 	{
 		previous_time = std::chrono::steady_clock::now();
 	}
+}

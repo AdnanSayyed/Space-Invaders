@@ -1,7 +1,6 @@
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Main/GameService.h"
 
-
 namespace Global
 {
 	using namespace Graphic;
