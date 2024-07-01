@@ -7,6 +7,7 @@ namespace Main {
 
 	using namespace Global;
 
+	GameState GameService::current_state = GameState::BOOT;
 	void GameService::initialize() {
 		//initialize things
 
@@ -63,5 +64,16 @@ namespace Main {
 		//game is running or not
 		return game_window->isOpen();
 	}
+
+	GameState GameService::getGameState()
+	{
+		return current_state;
+	}
+
+	void GameService::setGameState(GameState new_state)
+	{
+		current_state = new_state;
+	}
+
 
 }
