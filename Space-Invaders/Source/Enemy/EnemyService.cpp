@@ -1,15 +1,17 @@
 #include "../../Header/Enemy/EnemyService.h"
 #include "../../Header/Enemy/EnemyController.h"
 #include "../../Header/Global/ServiceLocator.h"
-
+#include "../../Header/Time/TimeService.h"
+#include<vector>	
 namespace Enemy
 {
 	using namespace Global;
+	using namespace Time;	
 
 
 	EnemyService::EnemyService()
 	{
-		enemy_controller = nullptr;
+
 	}
 
 	EnemyService::~EnemyService()
@@ -19,31 +21,50 @@ namespace Enemy
 
 	void EnemyService::initialize()
 	{
-		spawnEnemy();
+		spawn_timer = spawn_interval;
 	}
 
 	void EnemyService::update()
 	{
-		enemy_controller->update();
+		updateSpawnTimer();
+		processEnemySpawn();
+		for (int i = 0;i < enemy_list.size();i++)
+			enemy_list[i]->update();
+
 	}
 
 	void EnemyService::render()
 	{
-		enemy_controller->render();
+		for (int i = 0;i < enemy_list.size();i++)
+			enemy_list[i]->render();
 	}
 
-	EnemyController* EnemyService::spawnEnemy()
+	void EnemyService::spawnEnemy()
 	{
-		enemy_controller = new EnemyController();
-		enemy_controller->initialize();
-
-		return enemy_controller;
+		EnemyController* enemy= new EnemyController();
+		enemy->initialize();
+		
+		enemy_list.push_back(enemy);
 	}
 
 	void EnemyService::destroy()
 	{
-		delete(enemy_controller);
+		for (int i = 0;i < enemy_list.size();i++)
+			delete(enemy_list[i]);
 	}
-	
 
+
+	void EnemyService::updateSpawnTimer()
+	{
+		spawn_timer += ServiceLocator::getInstance()->getTimeService()->getDeltaTime(); // increase timer
+	}
+
+	void EnemyService::processEnemySpawn()
+	{
+		if (spawn_timer >= spawn_interval)
+		{
+			spawnEnemy();
+			spawn_timer = 0.0f;
+		}
+	}
 }

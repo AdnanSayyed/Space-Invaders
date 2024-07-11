@@ -94,7 +94,7 @@ namespace Enemy
 
 	void EnemyController::moveDown() {
 		sf::Vector2f currentPosition = enemy_model->getEnemyPosition();
-		currentPosition.y + enemy_model->enemy_movement_speed
+		currentPosition.y += enemy_model->enemy_movement_speed
 			* ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
 
 		if (currentPosition.y >= enemy_model->getReferencePosition().y + enemy_model->vertical_travel_distance)
