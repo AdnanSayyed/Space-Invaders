@@ -2,6 +2,7 @@
 #include "../../Header/Enemy/EnemyView.h"
 #include "../../Header/Enemy/EnemyModel.h"
 #include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Enemy/EnemyConfig.h"
 
 namespace Enemy
 {
@@ -41,23 +42,23 @@ namespace Enemy
 		return enemy_model->getEnemyPosition();
 	}
 
-	void EnemyController::move()
-	{
-		switch (enemy_model->getMovementDirection())
-		{
-		case::Enemy::MovementDirection::LEFT:
-			moveLeft();
-			break;
+	//void EnemyController::move()
+	//{
+	//	switch (enemy_model->getMovementDirection())
+	//	{
+	//	case::Enemy::MovementDirection::LEFT:
+	//		moveLeft();
+	//		break;
 
-		case::Enemy::MovementDirection::RIGHT:
-			moveRight();
-			break;
+	//	case::Enemy::MovementDirection::RIGHT:
+	//		moveRight();
+	//		break;
 
-		case::Enemy::MovementDirection::DOWN:
-			moveDown();
-			break;
-		}
-	}
+	//	case::Enemy::MovementDirection::DOWN:
+	//		moveDown();
+	//		break;
+	//	}
+	//}
 
 	void EnemyController::moveLeft()
 	{
