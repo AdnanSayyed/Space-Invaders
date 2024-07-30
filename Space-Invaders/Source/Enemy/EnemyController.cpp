@@ -8,10 +8,10 @@ namespace Enemy
 {
 	using namespace Global;
 
-	EnemyController::EnemyController()
+	EnemyController::EnemyController(EnemyType type)
 	{
 		enemy_view = new EnemyView();
-		enemy_model = new EnemyModel();
+		enemy_model = new EnemyModel(type);
 	}
 
 	EnemyController::~EnemyController()
@@ -41,6 +41,17 @@ namespace Enemy
 	{
 		return enemy_model->getEnemyPosition();
 	}
+
+	EnemyType EnemyController::getEnemyType()
+	{
+		return enemy_model->getEnemyType();
+	}
+
+	EnemyState EnemyController::getEnemyState() {
+		return enemy_model->getEnemyState();
+	}
+
+
 
 	//void EnemyController::move()
 	//{

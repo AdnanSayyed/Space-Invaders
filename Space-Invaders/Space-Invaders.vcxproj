@@ -133,7 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Source\Enemy\Controllers\SubZerController.cpp" />
+    <ClCompile Include="Source\Enemy\Controllers\SubZeroController.cpp" />
     <ClCompile Include="Source\Enemy\Controllers\ZapperController.cpp" />
     <ClCompile Include="Source\Enemy\EnemyController.cpp" />
     <ClCompile Include="Source\Enemy\EnemyModel.cpp" />

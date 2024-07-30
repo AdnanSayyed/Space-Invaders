@@ -72,7 +72,7 @@
     <ClCompile Include="Source\Gameplay\GameplayController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Enemy\Controllers\SubZerController.cpp">
+    <ClCompile Include="Source\Enemy\Controllers\SubZeroController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Enemy\Controllers\ZapperController.cpp">
