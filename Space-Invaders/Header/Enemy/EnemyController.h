@@ -17,9 +17,12 @@ namespace Enemy
 		EnemyModel* enemy_model;
 
 		virtual void move() = 0;
-		void moveLeft();
+		/*void moveLeft();
 		void moveRight();
-		void moveDown();
+		void moveDown();*/
+
+		sf::Vector2f getRandomInitialPosition();
+		void handleOutOfBounds();
 
 	public:
 		EnemyController(EnemyType type);
