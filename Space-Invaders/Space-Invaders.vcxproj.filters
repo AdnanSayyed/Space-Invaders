@@ -179,5 +179,8 @@
     <ClInclude Include="Header\Sound\SoundService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Header\Projectile\IProjectile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
